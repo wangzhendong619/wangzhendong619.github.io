@@ -1,1 +1,408 @@
-Hello World
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Zhendong Wang's Homepage</title>
+
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"/>
+	-->
+	<script async="" src="./Files/analytics.js.下载"></script><script type="text/javascript" src="./Files/jquery.min.js.下载"></script>
+	<script type="text/javascript" src="./Files/jquery-ui.min.js.下载"></script>
+	<link rel="stylesheet" type="text/css" href="./Files/jquery-ui.min.css">
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+		
+	</script>
+	<script type="text/javascript" src="./ZhendongWang&#39;s Homepage_files/setMail.js.下载"></script>
+	
+	<script type="text/javascript">  
+	function setVline(e){
+		a=$('.vline').first();
+		b=$('.paper-entry').last();
+		t=a.offset().top;
+        b=b.offset().top + b.outerHeight(true);
+		a.height(b-t-20);
+
+	}
+	$(window).resize(setVline);
+		function setTooltip(){
+			$('.paper-link').each(
+				function(){
+
+					$(this).tooltip({tooltipClass:'paper-size-tooltip',content: function() {
+						var element = $( this );
+						if ( element.is( "[data-size]" ) ) {
+							return element.attr( "data-size" )+ ' MB';
+						}
+
+					},'position':{my: 'center bottom', at: 'center top',of:$(this)}, hide: {duration:50},show:{duration:10},items:'a'});
+
+				}
+				);
+
+
+			
+			$('.teaser').each(
+				function(){
+				var parent=$(this);//.parent();
+				$(this).tooltip({
+
+
+
+					'position':{my: 'left top', at: 'left bottom',of:$(this)}, hide: {duration:0},tooltipClass:'teaser-text-tooltip',
+					content: '<div style="background-color:rgba(255,255,255,0);">'+$(this).attr('title')+'<hr style=color:white;"><span style="font-size:85%;color:rgb(230,230,230)"><span style="text-decoration:underline">Figure:</span> '+$(this).attr('alt')+'</span></div>'
+
+				});
+
+			}
+			);
+
+
+
+
+			
+			
+			
+			
+
+		}
+
+		function setEaster(){
+			fadeouttime=500;
+			fadeintime=6000;
+			$('#mepic').hover(
+				
+				function(){
+
+					$('#me2d').stop().animate({'opacity':0},fadeintime);
+					$('#me2d').promise().done(function(){$('#me3d').stop().animate({'opacity':1},fadeouttime);});
+
+
+				//$('#me2d').promise().done(function(){$(this).css('display','none');$('#me3d').css('display','inline');});
+				
+				
+			},
+			function(){$('#me2d').stop().animate({'opacity':1},fadeouttime);
+			$('#me3d').stop().animate({'opacity':0},fadeouttime);
+		}
+
+		);
+
+			$('#me3d').attr('src','pics/me3d.png');
+		}
+		function setOpacity(){
+			return;
+			hideopa=0.7;
+			fadeint=200;
+			fadeoutt=500;
+			//$('.teaser').css('opacity', opa);  
+
+// when hover over the selected image change the opacity to 1  
+
+$('.teaser').hover(  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':hideopa},fadeint); /*,'background-color':'none'*/
+		$(this).parent().stop().animate({'opacity':1},fadeint);/*,'background-color':'rgb(246,245,244)'*/
+
+	},  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':1},fadeoutt)/*,'background-color':'none'*/
+	});  
+
+}
+function setYears(){
+	$('li.paperyear').each(function(){
+	var element = $( this );
+						if ( element.is( "[year]" ) ) {
+							element.prepend('<hr class="fancy-line"></hr><div class="tab">'+element.attr('year')+"</div>")
+						}
+					});
+}
+</script>
+
+<script type="text/javascript" src="./Files/track_clicks.js.下载"></script>
+<link rel="stylesheet" type="text/css" href="./Files/main.css">
+
+</head>
+
+<body onload="setMail(); setEaster();setTooltip();setOpacity();
+
+
+
+setVline();
+$(&#39;.vline&#39;).hide();
+$(&#39;.vline&#39;).slideDown(1200);
+//setYears();
+
+
+	$(&#39;.fancy-line&#39;).each(function(ind){$(this).delay(ind*250+300).animate({
+    
+    width:&#39;100%&#39;
+},500);
+});
+">
+
+	<div id="main">
+		<div>
+
+			<div style="float:left;margin-right:1%">
+				<div id="mepic">
+					<img id="me2d" src="./Files/wzd.jpg" style="width:110px;position:absolute;margin-left:10px" alt="Yes, this is I!" class="round-corner">
+					<img id="me3d" style="width:130px;opacity:0;position:absolute" alt="Yes, this is I (in 3D!)" src="./Files/me3d.png">
+					<img src="./Files/me3d.png" style="width:130px;visibility:hidden">
+				</div>	
+			</div>
+			<div>
+				<div class="heading">Zhendong Wang</div>
+				<div style="font-size:98%">
+
+					<b>Email</b> <span class="emailplace"><a href="mailto:wangzhendong@zju.edu.cn" target="_blank">wangzhendong@zju.edu.cn</a> </span>
+					<br><br>
+					I will graduate and get my Ph.D degree in the coming December.<br>
+					<br> My main fields of interest are <span style="font-weight:bold"> Physics-based Simulation, Numerical Optimization</span> and <span style="font-weight:bold">Computer Graphics</span>.
+				</div>
+			</div>
+		</div>
+		<br>
+
+		<div style="clear:both">
+			
+
+		</div>
+		<div class="vline" style="height: 1726.05px; display: block;"> </div>
+		<hr class="fancy-line" style="width: 100%;">
+		<div class="heading">Teaching</div>
+		<!--2016: Minicourse on computational aspects of mappings at the <a href="http://www.geometrysummit.org/summerschool/program.html">IGS summer school</a>.<br> -->
+		<!--2015: Co-organizing the Seminar on Advanced Topics in Optimization with Shahar Kovalsky.<br>-->
+		2013-2015: TA for "Computer Graphics".
+
+		<hr class="fancy-line" style="width: 100%;">
+		<div class="heading">Education</div>
+		<ol>	
+			<li class="paper-entry">
+					<img alt="Zhejiang University." class="teaser" src="./Files/zju.png" title="Zhejiang University.">
+
+					<div class="paper-cell">
+						<b>Ph.D Degree (2013.9--2018.12)</b><br>
+						<div class="paper-data">
+							Thesis: Research on Physics-based Cloth Simulation
+							<!--<br>  <a class="paper-link" data-size="15" href="https://noamaig.github.io/html/projects/IGS2016/slide.pdf">Slides (pdf)</a> -->
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+			</li>
+
+			<li class="paper-entry">
+					<img alt="The Ohio State University." class="teaser" src="./Files/osu.png" title="The Ohio State University.">
+
+					<div class="paper-cell">
+						<b>Visiting Scholar (2017.1--2018.1)</b><br>
+						<div class="paper-data">
+							One year visiting scholar
+							<!--<br>  <a class="paper-link" data-size="15" href="https://noamaig.github.io/html/projects/IGS2016/slide.pdf">Slides (pdf)</a> -->
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+			</li>
+
+			<li class="paper-entry">
+					<img alt="Wuhan University." class="teaser" src="./Files/whu.png" title="Wuhan University.">
+
+					<div class="paper-cell">
+						<b>Bachelor's Degree (2009.9--2013.6)</b><br>
+						<div class="paper-data">
+							Thesis: High-quality Cloth Simulation based on Exact Collision Handling
+							<!--<br>  <a class="paper-link" data-size="15" href="https://noamaig.github.io/html/projects/IGS2016/slide.pdf">Slides (pdf)</a> -->
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+			</li>
+		</ol>
+
+		<hr class="fancy-line" style="width: 100%;">
+		<div id="pub">
+			<span class="heading">Publications</span>
+			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
+			<ol style="padding:0px;list-style-type:none">
+			<li class="paperyear" year="2018">
+				<ol>
+					<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+							<img alt="Multigrid" src="./Files/funnel.jpg" class="teaser" title="Multigrid">
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Parallel Multigrid for Nonlinear Cloth Simulation</b><br>
+								<div class="paper-data"><span class="authors"><span class="hi"><b>Zhendong Wang</b></span>, Longhua Wu, Marco Fratacangali, <a href="https://min-tang.github.io/home/" data-size="2">Min Tang</a> , <a href = "http://web.cse.ohio-state.edu/~wang.3602/" data-size="2">Huamin Wang</a></span>
+									Pacific Graphics 2018<br>
+									<a class="paper-link" href="https://wangzhendong619.github.io/home/papers/MG_CRC.pdf" data-size="50">Paper</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+						<div style="clear:both;"></div>
+
+					</li>
+
+					<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+							<img alt="DCC" src="./Files/dcd.png" class="teaser" title="dcc">
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Accurate self-collision detection using enhanced dual-cone method</b><br>
+								<div class="paper-data"><span class="authors">Tongtong Wang, <a href="https://min-tang.github.io/home/" data-size="2">Min Tang</a>, <span class="hi"><b>Zhendong Wang</b></span>, Ruofeng Tong</span>
+									Computer & Graphics<br>
+									<a class="paper-link" href="https://wangzhendong619.github.io/home/papers/DCC-CG-2018.pdf" data-size="50">Paper</a> 
+									<!--| <a href="https://github.com/noamaig/spherical_orbifolds" data-size="2">Code</a> -->
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+						<div style="clear:both;"></div>
+
+					</li>
+				</ol>
+			</li>
+			<li class="paperyear" year="2016">
+				<ol>
+					<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+							<img alt="CVM2016" src="./Files/bunny.png" class="teaser" title="CVM2016&#39;CVM2016.">
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Efficient and Robust Strain Limiting and Treatment of Simultaneous Collision with Semedefinite Programming</b><br>
+								<div class="paper-data"><span class="authors"><span class="hi"><b>Zhendong Wang</b></span>, Tongtong Wang, <a href="https://min-tang.github.io/home/" data-size="2">Min Tang</a>, Ruofeng Tong</span>
+									Computational Visual Media 2016<br>
+									<a class="paper-link" href="https://wangzhendong619.github.io/home/papers/CVM2016.pdf" data-size="50">Paper</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+						<div style="clear:both;"></div>
+
+					</li>
+
+				</ol>
+			</li>
+			<li class="paperyear" year="2015">
+			<ol>				
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+					<img alt="TightCCD" src="./Files/funnel-tightccd.png" class="teaser" title="tightccd&#39;tightccd">
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>TightCCD: Efficient and Robust Continuous Collision Detection using Tight Error Bounds</b><br>
+								<div class="paper-data"><span class="authors"><span class="hi"><b>Zhendong Wang</b></span>, <a href="https://min-tang.github.io/home/" data-size="2">Min Tang</a>, Ruofeng Tong, Dinesh Manocha</span>
+									Pacific Graphics 2015<br>
+									<a class="paper-link" href="https://wangzhendong619.github.io/home/papers/TightCCD.pdf" data-size="50">Paper</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+			</ol>
+		</li>
+		<li class="paperyear" year="2014">
+			<ol>						
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+					<img alt="BSC" src="./Files/bsc.png" class="teaser" title="bsc (&quot;lifting&quot;) bsc.">
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+								<b>Fast and Exact Continuous Collision Detection with Bernstein Sign Classification</b><br>
+								<div class="paper-data"><span class="authors"><a href="https://min-tang.github.io/home/" data-size="2">Min Tang</a>, Ruofeng Tong, <span class="hi"><b>Zhendong Wang</b></span>, Dinesh Manocha</span>
+									ACM SIGGRAPH Asia 2014<br>
+									<a class="paper-link" href="https://wangzhendong619.github.io/home/papers/BSC.pdf" data-size="50">Paper</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+			</ol>
+		</li>
+
+<!--
+		<li>
+		
+		<hr class="fancy-line" style="width: 100%;">
+
+		<div class="heading">Education</div>
+			<ol>	
+			<li class="paper-entry">
+					<img alt="A deformation of a bar." class="teaser" src="./Files/teaser.jpg" title="A course on practical aspects of map-computation.">
+
+					<div class="paper-cell">
+						<b>Computational Aspects of Mappings</b><br>
+						<div class="paper-data">
+							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
+							<br>  <a class="paper-link" data-size="15" href="https://noamaig.github.io/html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+			</li>
+			</ol>
+		</li>
+-->
+	</ol>
+</div>
+</div>
+
+
+
+
+</body></html>
