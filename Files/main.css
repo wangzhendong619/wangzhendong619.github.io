@@ -106,6 +106,19 @@ margin: 0 auto;
 .venue{
   font-style: italic;
 }
+.head-cell{
+  /*min-width: 500px; 
+  max-width: 680px;*/
+  min-width: 100%; 
+  max-width: 100%;
+  text-align: justify;
+  grid-column: 2;
+}
+.text-cell{
+  min-width: 100%; 
+  max-width: 100%;
+  text-align: justify;
+}
 .edu{
   width: 50px;
   padding:5px;
@@ -118,8 +131,10 @@ margin: 0 auto;
 .paper-cell{
 /*	float:left;*/
 /*  padding-top: 12px;*/
-  min-width: 700px;
+  min-width: 690px;
+  max-width: 700px;
   grid-column: 2;
+  justify-items: start;
 }
 .teaser{
   width: 180px;
@@ -147,12 +162,21 @@ margin: 0 auto;
   .heading.title{
     font-size: 37px;
   }
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   /* Media query for screens with a maximum width of 767px (e.g., smartphones) */
 
+  .head-cell{
+    grid-column: 1;
+    padding-bottom: 40px;
+    min-width: 100%; 
+    max-width: 100%;
+    text-align: justify;
+  }
   .paper-cell{
     grid-column: 1;
     padding-bottom: 40px;
+    min-width: 100%; 
+    max-width: 100%;
     text-align: center;
   }
   .edu{
