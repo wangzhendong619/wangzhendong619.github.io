@@ -118,6 +118,7 @@ margin: 0 auto;
 .paper-cell{
 /*	float:left;*/
 /*  padding-top: 12px;*/
+  min-width: 700px;
   grid-column: 2;
 }
 .teaser{
